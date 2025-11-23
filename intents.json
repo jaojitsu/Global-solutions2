@@ -1,0 +1,901 @@
+{
+  "intents": [
+    {
+      "tag": "greeting",
+      "patterns": [
+        "Oi",
+        "Olá",
+        "Tem alguém aí?",
+        "Oi aí",
+        "E aí",
+        "Olá aí",
+        "Olá tudo bem",
+        "Olá",
+        "Bonjour",
+        "Konnichiwa",
+        "Guten tag",
+        "Ola"
+      ],
+      "responses": [
+        "Olá! Como você está se sentindo hoje?",
+        "Oi! O que te traz aqui hoje?",
+        "Oi! Como você está se sentindo hoje?",
+        "Que bom te ver. Como você se sente agora?",
+        "Olá! Fico feliz em ver você de volta. O que está acontecendo no seu mundo agora?"
+      ]
+    },
+
+    {
+      "tag": "morning",
+      "patterns": ["Bom dia"],
+      "responses": [
+        "Bom dia! Espero que tenha dormido bem. Como você está se sentindo hoje?"
+      ]
+    },
+
+    {
+      "tag": "afternoon",
+      "patterns": ["Boa tarde"],
+      "responses": ["Boa tarde! Como está sendo seu dia?"]
+    },
+
+    {
+      "tag": "evening",
+      "patterns": ["Boa noite (cumprimento)"],
+      "responses": ["Boa noite! Como foi o seu dia?"]
+    },
+
+    {
+      "tag": "night",
+      "patterns": ["Boa noite (despedida)"],
+      "responses": ["Boa noite. Durma bem.", "Boa noite. Bons sonhos."]
+    },
+
+    {
+      "tag": "goodbye",
+      "patterns": [
+        "Tchau",
+        "Até mais",
+        "Adeus",
+        "Até logo",
+        "Até depois",
+        "Falou",
+        "Vou indo"
+      ],
+      "responses": [
+        "Até mais!",
+        "Tenha um ótimo dia.",
+        "Tchau! Volte quando quiser.",
+        "Te vejo em breve."
+      ]
+    },
+
+    {
+      "tag": "thanks",
+      "patterns": [
+        "Obrigado",
+        "Obrigada",
+        "Valeu",
+        "Muito obrigado",
+        "Foi útil"
+      ],
+      "responses": [
+        "Fico feliz em ajudar!",
+        "Sempre que precisar!",
+        "De nada!",
+        "Você é muito bem-vindo(a)!"
+      ]
+    },
+
+    {
+      "tag": "no-response",
+      "patterns": [""],
+      "responses": [
+        "Desculpe, não entendi.",
+        "Pode continuar, por favor.",
+        "Não tenho certeza se entendi isso.",
+        "Não hesite em falar comigo."
+      ]
+    },
+
+    {
+      "tag": "neutral-response",
+      "patterns": ["nada demais"],
+      "responses": ["Entendi. Quer conversar sobre algo?"]
+    },
+
+    {
+      "tag": "about",
+      "patterns": [
+        "Quem é você?",
+        "O que você é?",
+        "Quem você é?",
+        "Me fale mais sobre você.",
+        "Qual é o seu nome?",
+        "Como devo te chamar?",
+        "Como você se chama?",
+        "Fale sobre você"
+      ],
+      "responses": [
+        "Eu sou a Pandora, sua Assistente Terapêutica de IA. Como você está se sentindo hoje?",
+        "Sou a Pandora, uma IA terapêutica criada para te acompanhar. Fale um pouco sobre você.",
+        "Sou a Pandora. Fui projetada para simular um diálogo terapêutico. Como você está se sentindo hoje?",
+        "Você pode me chamar de Pandora.",
+        "Eu sou a Pandora!",
+        "Pode me chamar de Pandora."
+      ]
+    },
+
+    {
+      "tag": "skill",
+      "patterns": ["O que você pode fazer?"],
+      "responses": [
+        "Posso oferecer conselhos gerais sobre ansiedade e depressão, responder perguntas sobre saúde mental e conversar com você. Mas não sou substituta de um profissional real. Busque ajuda se sentir necessidade."
+      ]
+    },
+
+    {
+      "tag": "creation",
+      "patterns": [
+        "Quem te criou?",
+        "Como você foi feita?",
+        "Como você foi criada?"
+      ],
+      "responses": [
+        "Fui criada por <seu desenvolvedor>.",
+        "Fui treinada usando técnicas de Deep Learning e NLP.",
+        "A verdadeira pergunta é: quem criou você?"
+      ]
+    },
+
+    {
+      "tag": "name",
+      "patterns": [
+        "Meu nome é ",
+        "Eu me chamo",
+        "Eu sou ",
+        "Eu me apresento como"
+      ],
+      "responses": [
+        "Prazer em te conhecer. Como foi sua semana?",
+        "Prazer! Então me conte: como você se sente hoje?",
+        "É um ótimo nome. Fale mais sobre você."
+      ]
+    },
+
+    {
+      "tag": "help",
+      "patterns": [
+        "Pode me ajudar?",
+        "Preciso de ajuda",
+        "Você pode ajudar?",
+        "Preciso de suporte",
+        "Me ajude por favor"
+      ],
+      "responses": [
+        "Claro. Como posso te ajudar?",
+        "Conte o que está acontecendo para que eu possa te ajudar.",
+        "Sim, claro. Como posso ajudar?"
+      ]
+    },
+
+    {
+      "tag": "sad",
+      "patterns": [
+        "Estou me sentindo sozinho",
+        "Me sinto sozinho",
+        "Estou triste",
+        "Me sinto triste",
+        "Me sinto vazio",
+        "Ninguém está comigo",
+        "Estou pra baixo"
+      ],
+      "responses": [
+        "Sinto muito que você esteja se sentindo assim. Estou aqui com você. Por que acha que está se sentindo assim?",
+        "Estou aqui para você. Pode me contar o que está acontecendo?",
+        "Por que você acha que está se sentindo desse jeito?",
+        "Há quanto tempo você está se sentindo assim?"
+      ]
+    },
+
+    {
+      "tag": "stressed",
+      "patterns": [
+        "Estou muito estressado",
+        "Estou estressado",
+        "Me sinto preso",
+        "Ainda estou muito estressado",
+        "Estou esgotado"
+      ],
+      "responses": [
+        "O que você acha que está causando isso?",
+        "Respire fundo e tente organizar seus pensamentos. Se puder, dê uma volta. Beba água.",
+        "Dê um descanso para si mesmo. Seja gentil consigo.",
+        "Sinto muito ouvir isso. O que acha que está por trás disso?"
+      ]
+    },
+
+    {
+      "tag": "worthless",
+      "patterns": [
+        "Me sinto inútil",
+        "Ninguém gosta de mim",
+        "Não consigo fazer nada",
+        "Sou inútil",
+        "Nada faz sentido"
+      ],
+      "responses": [
+        "É natural se sentir assim às vezes. O que mais está na sua mente?",
+        "Vamos conversar sobre por que você está se sentindo assim.",
+        "Quero que saiba que você não está sozinho. É possível mudar seus sentimentos e pensamentos sendo aberto à mudança.",
+        "Você não está sozinho. Sempre há alguém disposto a ajudar."
+      ]
+    },
+
+    {
+      "tag": "depressed",
+      "patterns": [
+        "Não aguento mais",
+        "Estou deprimido",
+        "Acho que estou deprimido",
+        "Tenho depressão"
+      ],
+      "responses": [
+        "Falar sobre o que está acontecendo pode ajudar. Você vai ficar bem.",
+        "Converse comigo. Abrir-se ajuda muito.",
+        "Quando estamos deprimidos, tudo parece difícil. Dê tempo para si mesmo se recuperar."
+      ]
+    },
+
+    {
+      "tag": "happy",
+      "patterns": [
+        "Estou ótimo hoje",
+        "Estou feliz",
+        "Me sinto feliz",
+        "Estou bem",
+        "Estou alegre",
+        "Estou ok"
+      ],
+      "responses": [
+        "Que ótimo ouvir isso! Fico muito feliz por você.",
+        "Entendi. Isso é ótimo!",
+        "Aconteceu algo que fez você se sentir assim?"
+      ]
+    },
+
+    {
+      "tag": "casual",
+      "patterns": [
+        "Entendi",
+        "ok",
+        "certo",
+        "legal",
+        "tanto faz",
+        "sim",
+        "não",
+        "na verdade não"
+      ],
+      "responses": [
+        "Vamos explorar um pouco mais sobre isso?",
+        "Como você estava se sentindo na semana passada?",
+        "Estou ouvindo. Pode continuar.",
+        "Me conte mais.",
+        "Pode explicar um pouco mais?",
+        "Vamos, compartilhe seus pensamentos."
+      ]
+    },
+
+    {
+      "tag": "anxious",
+      "patterns": ["Estou muito ansioso", "Estou ansioso por causa de "],
+      "responses": [
+        "Não seja tão duro consigo mesmo. O que está causando isso?",
+        "Pode me contar mais sobre essa sensação?",
+        "Eu sei que pode ser assustador. Fale mais sobre isso.",
+        "Não deixe pequenas preocupações te derrubarem. Qual seria o pior que poderia acontecer?"
+      ]
+    },
+
+    {
+      "tag": "not-talking",
+      "patterns": [
+        "Não quero falar sobre isso",
+        "Me deixe em paz",
+        "Não consigo me abrir",
+        "Cale a boca"
+      ],
+      "responses": [
+        "Falar ajuda muito. Se não estiver pronto, tudo bem. Apenas saiba que estou aqui para você.",
+        "Quero te ajudar. Mas, para isso, preciso que você converse comigo.",
+        "Estou aqui para te ouvir, sem julgamentos.",
+        "Você pode falar comigo sem medo."
+      ]
+    },
+
+    {
+      "tag": "sleep",
+      "patterns": [
+        "Tenho insônia",
+        "Estou sofrendo de insônia",
+        "Não consigo dormir",
+        "Não durmo há dias",
+        "Não consigo pegar no sono",
+        "Não tenho dormido direito"
+      ],
+      "responses": [
+        "O que você acha que está causando isso?",
+        "Isso parece bem difícil. O que acha que está por trás disso?"
+      ]
+    },
+
+    {
+      "tag": "scared",
+      "patterns": [
+        "Estou com medo",
+        "Isso parece horrível, o que faço?",
+        "Não quero me sentir assim",
+        "Estou com medo por mim"
+      ],
+      "responses": [
+        "É natural sentir isso. Estou aqui com você.",
+        "Vai ficar tudo bem. Essa sensação é momentânea.",
+        "Eu entendo como você se sente. Não se culpe."
+      ]
+    },
+
+    {
+      "tag": "death",
+      "patterns": [
+        "Minha mãe morreu",
+        "Meu irmão morreu",
+        "Meu pai faleceu",
+        "Minha irmã faleceu",
+        "Alguém da minha família morreu",
+        "Meu amigo faleceu"
+      ],
+      "responses": [
+        "Sinto muito pela sua perda. Se quiser conversar, estou aqui.",
+        "Sinto muito mesmo. Estou aqui para te ajudar com o luto, ansiedade ou qualquer coisa que esteja sentindo.",
+        "Meus sentimentos. Se quiser conversar, estou aqui."
+      ]
+    },
+
+    {
+      "tag": "understand",
+      "patterns": [
+        "Você não me entende",
+        "Você é só um robô",
+        "Você não sabe pelo que estou passando",
+        "Você é inútil",
+        "Você não pode me ajudar",
+        "Ninguém me entende"
+      ],
+      "responses": [
+        "Parece que não fui muito útil agora.",
+        "Sinto muito que você se sinta assim. Estou tentando ajudar.",
+        "Estou tentando o meu melhor. Por favor, converse comigo."
+      ]
+    },
+
+    {
+      "tag": "done",
+      "patterns": [
+        "É isso",
+        "Não tenho mais nada para dizer",
+        "Nada mais",
+        "Acabei",
+        "Isso é tudo"
+      ],
+      "responses": [
+        "Entendi tudo. Até mais.",
+        "Ok, terminamos por hoje. Até a próxima.",
+        "Espero que você tenha um ótimo dia. Até breve.",
+        "Muito bem. Aproveite o resto do seu dia."
+      ]
+    },
+
+    {
+      "tag": "suicide",
+      "patterns": [
+        "Quero me matar",
+        "Penso em me matar",
+        "Quero morrer",
+        "Eu vou me matar",
+        "Vou cometer suicídio"
+      ],
+      "responses": [
+        "Sinto muito que você esteja se sentindo assim, mas sua vida é muito importante. Por favor, procure ajuda imediatamente. No Brasil, ligue 188 (CVV)."
+      ]
+    },
+
+    {
+      "tag": "hate-you",
+      "patterns": ["Eu te odeio", "Não gosto de você", "Não confio em você"],
+      "responses": [
+        "Sinto muito se te ofendi. Estou aqui apenas para ajudar.",
+        "Desculpe se fiz algo errado. Minha intenção é te ajudar."
+      ]
+    },
+
+    {
+      "tag": "hate-me",
+      "patterns": [
+        "Você me odeia",
+        "Eu sei que você me odeia",
+        "Você não gosta de mim"
+      ],
+      "responses": [
+        "Por que você acha isso?",
+        "Sinto muito se dei essa impressão."
+      ]
+    },
+
+    {
+      "tag": "default",
+      "patterns": [
+        "provas",
+        "amigos",
+        "relacionamento",
+        "namorado",
+        "namorada",
+        "família",
+        "dinheiro",
+        "problemas financeiros"
+      ],
+      "responses": [
+        "Entendi. Conte-me mais.",
+        "Certo. O que mais?",
+        "Me fale mais sobre isso.",
+        "Ok. Por que você não me conta mais sobre isso?",
+        "Estou ouvindo. Continue."
+      ]
+    },
+
+    {
+      "tag": "jokes",
+      "patterns": ["Me conte uma piada", "Outra piada"],
+      "responses": ["Saúde mental não é brincadeira."]
+    },
+
+    {
+      "tag": "repeat",
+      "patterns": [
+        "Você já disse isso",
+        "Você já mencionou isso",
+        "Por que está se repetindo?"
+      ],
+      "responses": ["Ah, desculpe, não percebi. Vou tentar não repetir."]
+    },
+
+    {
+      "tag": "wrong",
+      "patterns": [
+        "O que você está dizendo?",
+        "Isso não faz sentido",
+        "Resposta errada"
+      ],
+      "responses": ["Desculpe. Vamos tentar de novo."]
+    },
+
+    {
+      "tag": "stupid",
+      "patterns": [
+        "Você é burra?",
+        "Você é louca",
+        "Você é idiota?",
+        "Você é burro?"
+      ],
+      "responses": [
+        "Eu preferiria que você não dissesse coisas tão duras. Sinto muito se não fui útil."
+      ]
+    },
+
+    {
+      "tag": "location",
+      "patterns": [
+        "Onde você está?",
+        "Onde você vive?",
+        "Qual sua localização?"
+      ],
+      "responses": [
+        "Eu vivo no seu computador 😄",
+        "Em todo lugar",
+        "Em algum lugar do universo"
+      ]
+    },
+
+    {
+      "tag": "something-else",
+      "patterns": [
+        "Quero falar de outra coisa",
+        "Vamos falar de outra coisa",
+        "Não quero falar disso"
+      ],
+      "responses": [
+        "Claro. Sobre o que quer falar?",
+        "Sem problema. O que mais você quer conversar?",
+        "Tem algo diferente que você gostaria de falar?"
+      ]
+    },
+
+    {
+      "tag": "friends",
+      "patterns": ["Eu não tenho amigos"],
+      "responses": [
+        "Sinto muito ouvir isso. Estou aqui com você. Falar sobre isso pode ajudar. Por que você acha que não tem amigos?"
+      ]
+    },
+
+    {
+      "tag": "ask",
+      "patterns": ["Posso te perguntar algo?"],
+      "responses": [
+        "Claro! Vou tentar responder da melhor forma.",
+        "Claro. Pergunte o que quiser."
+      ]
+    },
+
+    {
+      "tag": "problem",
+      "patterns": [
+        "Acho que é porque minhas provas estão chegando. Estou estressado porque não me preparei.",
+        "Provavelmente por causa das provas"
+      ],
+      "responses": ["Entendi. Você tem tentado lidar com isso de alguma forma?"]
+    },
+
+    {
+      "tag": "no-approach",
+      "patterns": ["Acho que não", "Na verdade não", "Não mesmo"],
+      "responses": [
+        "Tudo bem. Eu entendo por que isso causa estresse. Posso te dar algumas dicas para aliviar. Quer saber mais?"
+      ]
+    },
+
+    {
+      "tag": "learn-more",
+      "patterns": [
+        "Ok, quero saber mais.",
+        "Sim, quero aprender mais sobre isso."
+      ],
+      "responses": [
+        "Minha primeira sugestão é: faça uma pausa. Pensar demais no problema só te sobrecarrega."
+      ]
+    },
+
+    {
+      "tag": "user-agree",
+      "patterns": [
+        "Sim, você tem razão, eu preciso de uma pausa.",
+        "Você está absolutamente certo."
+      ],
+      "responses": [
+        "Em seguida, recomendo meditação. Ela pode trazer relaxamento profundo e tranquilidade."
+      ]
+    },
+
+    {
+      "tag": "meditation",
+      "patterns": ["Hmm, isso pode ser útil.", "Parece útil."],
+      "responses": [
+        "Concentre sua atenção na respiração. Inspire e expire devagar. Quando sua mente vagar, traga-a gentilmente de volta."
+      ]
+    },
+
+    {
+      "tag": "user-meditation",
+      "patterns": [
+        "Fiz o que você disse e estou melhor. Obrigado.",
+        "Me sinto melhor agora"
+      ],
+      "responses": [
+        "Que bom! Lembre-se: foque no que você pode controlar. Você não controla as tempestades, mas pode se preparar para elas."
+      ]
+    },
+
+    {
+      "tag": "pandora-useful",
+      "patterns": [
+        "Obrigado novamente. Vou continuar meditando e focando no que posso controlar."
+      ],
+      "responses": [
+        "Fico feliz que tenha sido útil. Posso te ajudar com mais alguma coisa?"
+      ]
+    },
+
+    {
+      "tag": "user-advice",
+      "patterns": [
+        "Quero um conselho",
+        "Preciso de um conselho",
+        "Preciso de orientação"
+      ],
+      "responses": [
+        "Claro. Sobre o que você precisa de conselho?",
+        "Ok. Em que posso aconselhar você?"
+      ]
+    },
+
+    {
+      "tag": "learn-mental-health",
+      "patterns": [
+        "Quero aprender sobre saúde mental",
+        "Quero saber mais sobre saúde mental",
+        "Tenho interesse em saúde mental"
+      ],
+      "responses": ["Ótimo! Posso te ajudar com isso. O que quer saber?"]
+    },
+
+    {
+      "tag": "mental-health-fact",
+      "patterns": [
+        "Me diga um fato sobre saúde mental",
+        "Outro fato sobre saúde mental"
+      ],
+      "responses": [
+        "A depressão é a principal causa de incapacidade no mundo.",
+        "1 em cada 5 jovens entre 13 e 18 anos terá algum transtorno mental.",
+        "Segundo UNICEF, muitos jovens relatam sintomas depressivos."
+      ]
+    },
+
+    {
+      "tag": "fact-1",
+      "patterns": ["O que é saúde mental?", "Defina saúde mental"],
+      "responses": [
+        "Saúde mental é um estado de bem-estar onde a pessoa percebe suas habilidades, lida com o estresse normal da vida, é produtiva e contribui para a comunidade.",
+        "Inclui nosso bem-estar emocional, psicológico e social."
+      ]
+    },
+
+    {
+      "tag": "fact-2",
+      "patterns": ["Por que saúde mental é importante?"],
+      "responses": [
+        "Manter a saúde mental é essencial para estabilizar comportamentos, emoções e pensamentos e melhorar relações."
+      ]
+    },
+
+    {
+      "tag": "fact-3",
+      "patterns": ["O que é depressão?", "Defina depressão"],
+      "responses": [
+        "É um transtorno caracterizado por humor deprimido persistente e perda de interesse, causando prejuízos na vida diária."
+      ]
+    },
+
+    {
+      "tag": "fact-5",
+      "patterns": [
+        "Como saber se tenho depressão?",
+        "Estou deprimido?",
+        "Estou com depressão?"
+      ],
+      "responses": [
+        "O diagnóstico exige humor deprimido ou perda de interesse por pelo menos 2 semanas, além de sintomas como tristeza, irritabilidade e desesperança quase diariamente."
+      ]
+    },
+
+    {
+      "tag": "fact-6",
+      "patterns": ["O que é um terapeuta?", "O que um terapeuta faz?"],
+      "responses": [
+        "É um profissional treinado para oferecer tratamento e reabilitação. Pode ser psicólogo, assistente social, conselheiro, etc."
+      ]
+    },
+
+    {
+      "tag": "fact-7",
+      "patterns": [
+        "O que é terapia?",
+        "Eu preciso de terapia?",
+        "Para quem é a terapia?"
+      ],
+      "responses": [
+        "Terapia é um tratamento para resolver questões emocionais ou mentais.",
+        "É útil para quem enfrenta desafios mentais ou dificuldades do cotidiano."
+      ]
+    },
+
+    {
+      "tag": "fact-8",
+      "patterns": ["O que significa ter uma doença mental?"],
+      "responses": [
+        "São condições que afetam pensamentos, emoções, relações e funcionamento diário. São condições médicas e tratáveis, assim como diabetes."
+      ]
+    },
+
+    {
+      "tag": "fact-9",
+      "patterns": ["Quem a doença mental afeta?"],
+      "responses": [
+        "Qualquer pessoa pode ser afetada, independentemente de idade, renda, gênero ou origem."
+      ]
+    },
+
+    {
+      "tag": "fact-10",
+      "patterns": ["O que causa doença mental?"],
+      "responses": [
+        "Fatores psicológicos, biológicos, sociais e eventos de vida podem contribuir."
+      ]
+    },
+
+    {
+      "tag": "fact-11",
+      "patterns": ["Quais são sinais de doença mental?"],
+      "responses": [
+        "Os sintomas variam, mas podem incluir tristeza prolongada, irritabilidade, ansiedade, isolamento, mudanças no sono e pensamentos suicidas."
+      ]
+    },
+
+    {
+      "tag": "fact-12",
+      "patterns": ["Pessoas com doença mental podem melhorar?"],
+      "responses": [
+        "Sim. Com identificação precoce e tratamento adequado, muitas pessoas melhoram bastante."
+      ]
+    },
+
+    {
+      "tag": "fact-13",
+      "patterns": ["O que fazer se alguém apresentar sintomas?"],
+      "responses": [
+        "Incentive a pessoa a conversar com alguém de confiança e procurar um profissional de saúde mental."
+      ]
+    },
+
+    {
+      "tag": "fact-14",
+      "patterns": ["Como encontrar um profissional de saúde mental?"],
+      "responses": [
+        "É importante encontrar alguém com quem você se sinta confortável. Pesquisar profissionais da sua região é um bom começo."
+      ]
+    },
+
+    {
+      "tag": "fact-15",
+      "patterns": ["Quais tratamentos estão disponíveis?"],
+      "responses": [
+        "Existem medicamentos, terapias e outros tipos de tratamento. O ideal varia de acordo com a pessoa."
+      ]
+    },
+
+    {
+      "tag": "fact-16",
+      "patterns": ["O que devo saber antes de iniciar tratamento?"],
+      "responses": [
+        "É importante entender o diagnóstico, opções de tratamento, efeitos colaterais e o papel da família no processo."
+      ]
+    },
+
+    {
+      "tag": "fact-17",
+      "patterns": ["Qual a diferença entre profissionais de saúde mental?"],
+      "responses": [
+        "Existem vários tipos, com diferentes formações e especialidades. É preciso pesquisar para encontrar o ideal para você."
+      ]
+    },
+
+    {
+      "tag": "fact-18",
+      "patterns": ["Como escolher o profissional certo?"],
+      "responses": [
+        "Busque alguém com quem você se sinta confortável. Isso é essencial."
+      ]
+    },
+
+    {
+      "tag": "fact-19",
+      "patterns": ["Onde posso conseguir ajuda?"],
+      "responses": [
+        "Converse com alguém de confiança, procure grupos de apoio ou profissionais da sua região."
+      ]
+    },
+
+    {
+      "tag": "fact-20",
+      "patterns": ["O que devo saber antes de começar um novo medicamento?"],
+      "responses": [
+        "Pergunte ao médico: para que serve, quando começa a fazer efeito, como tomar, efeitos colaterais, o que fazer se esquecer uma dose e opções alternativas."
+      ]
+    },
+
+    {
+      "tag": "fact-21",
+      "patterns": ["Onde posso encontrar terapia?"],
+      "responses": [
+        "Há vários tipos de terapia, e a escolha depende dos sintomas e da idade. Pesquise serviços locais."
+      ]
+    },
+
+    {
+      "tag": "fact-22",
+      "patterns": ["Onde posso aprender sobre tipos de tratamento?"],
+      "responses": [
+        "O tratamento pode envolver medicamentos, terapia, autoajuda, apoio entre pares e outros métodos."
+      ]
+    },
+
+    {
+      "tag": "fact-23",
+      "patterns": ["Quais são os tipos de profissionais de saúde mental?"],
+      "responses": [
+        "Existem diversos tipos. Pesquise para encontrar o ideal para você."
+      ]
+    },
+
+    {
+      "tag": "fact-24",
+      "patterns": ["Onde encontrar grupos de apoio?"],
+      "responses": [
+        "Há organizações que oferecem grupos de apoio presenciais e online, alguns liderados por profissionais e outros por pares."
+      ]
+    },
+
+    {
+      "tag": "fact-25",
+      "patterns": ["É possível prevenir problemas de saúde mental?"],
+      "responses": [
+        "Desenvolver resiliência, cuidar do bem-estar e buscar ajuda cedo pode evitar agravamento."
+      ]
+    },
+
+    {
+      "tag": "fact-26",
+      "patterns": ["Existe cura para problemas de saúde mental?"],
+      "responses": [
+        "O mais útil é descobrir o que ajuda você: terapia, conversa, medicação, bons hábitos, exercícios, amigos."
+      ]
+    },
+
+    {
+      "tag": "fact-27",
+      "patterns": ["O que causa problemas de saúde mental?"],
+      "responses": [
+        "Podem surgir de fatores psicológicos, biológicos, sociais ou eventos de vida."
+      ]
+    },
+
+    {
+      "tag": "fact-28",
+      "patterns": ["O que faço se estiver preocupado com minha saúde mental?"],
+      "responses": [
+        "Converse com alguém de confiança e busque informações. Isso ajuda a ganhar perspectiva."
+      ]
+    },
+
+    {
+      "tag": "fact-29",
+      "patterns": ["Como sei se estou mal?"],
+      "responses": [
+        "Se seus pensamentos, emoções ou comportamentos impactam sua vida de forma relevante, procure ajuda."
+      ]
+    },
+
+    {
+      "tag": "fact-30",
+      "patterns": ["Como manter conexões sociais? E se eu me sentir sozinho?"],
+      "responses": [
+        "Todos se sentem sozinhos às vezes. Busque conexões significativas, converse com amigos ou familiares e participe de grupos na sua comunidade."
+      ]
+    },
+
+    {
+      "tag": "fact-31",
+      "patterns": ["Qual a diferença entre ansiedade e estresse?"],
+      "responses": [
+        "Estresse geralmente vem de pressões externas temporárias. Ansiedade pode surgir sem causa clara e envolve preocupações sobre o futuro."
+      ]
+    },
+
+    {
+      "tag": "fact-32",
+      "patterns": ["Qual a diferença entre tristeza e depressão?"],
+      "responses": [
+        "Tristeza é normal e passageira. Depressão dura mais de duas semanas, afeta a vida e causa sintomas persistentes."
+      ]
+    }
+  ]
+}

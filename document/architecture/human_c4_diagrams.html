@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HUM.A.N Ops - Diagramas de Arquitetura C4</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/10.6.1/mermaid.min.js"></script>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #f5f7fa 0%, #e9e4f0 100%);
+            color: #2c3e50;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        h1 {
+            text-align: center;
+            color: #673AB7;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-shadow: 0 0 20px rgba(103, 58, 183, 0.2);
+        }
+        
+        .subtitle {
+            text-align: center;
+            color: #7E57C2;
+            font-size: 1.2em;
+            margin-bottom: 40px;
+            opacity: 0.9;
+        }
+        
+        .diagram-section {
+            background: #FFFFFF;
+            border-radius: 16px;
+            padding: 30px;
+            margin: 30px 0;
+            border: 1px solid #E0E0E0;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+        
+        .diagram-title {
+            font-size: 1.8em;
+            color: #673AB7;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .diagram-description {
+            color: #546E7A;
+            margin-bottom: 25px;
+            font-size: 1.1em;
+        }
+        
+        .mermaid {
+            background: #fdfcff;
+            border-radius: 12px;
+            padding: 20px;
+            margin: 20px 0;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        .navigation {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            margin: 40px auto;
+            padding: 15px;
+            background: #FFFFFF;
+            border-radius: 12px;
+            border: 1px solid #D1C4E9;
+        }
+        
+        .nav-link {
+            display: block;
+            color: #673AB7;
+            text-decoration: none;
+            padding: 8px 12px;
+            border-radius: 6px;
+            margin: 5px 0;
+            transition: all 0.3s ease;
+            font-size: 0.9em;
+        }
+        
+        .nav-link:hover {
+            background: rgba(103, 58, 183, 0.1);
+            transform: translateX(5px);
+        }
+        
+        .key-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+        
+        .feature-card {
+            background: #FFFFFF;
+            border-radius: 12px;
+            padding: 20px;
+            border: 1px solid #D1C4E9;
+        }
+        
+        .feature-title {
+            color: #512DA8;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .feature-card ul {
+            padding-left: 20px;
+            margin-top: 10px;
+            font-size: 0.9em;
+            list-style-type: '✔ ';
+        }
+
+        .feature-card li {
+            margin-bottom: 8px;
+            color: #455A64;
+        }
+        
+        .icon {
+            font-size: 1.5em;
+            margin-right: 10px;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🛡️ HUM.A.N Ops</h1>
+        <div class="subtitle">Plataforma Integrada de Bem-Estar, Operações e Sustentabilidade</div>
+
+        <div class="navigation" role="navigation">
+            <a href="#context" class="nav-link">🌍 C1: Diagrama de Contexto</a>
+            <a href="#containers" class="nav-link">📦 C2: Diagrama de Contêineres</a>
+            <a href="#components" class="nav-link">⚙️ C3: Diagrama de Componentes</a>
+            <a href="#components-ml" class="nav-link">🧠 C3: Diagrama de Componentes do ML Service</a>
+            <a href="#code-nlu" class="nav-link">📄 C4: Código (NLU Emocional)</a>
+            <a href="#deployment" class="nav-link">☁️ Arquitertura de Implantação</a>
+        </div>
+
+        <div class="key-features">
+            <div class="feature-card">
+                <div class="feature-title">🧑‍🤝‍🧑 1) Módulo de Pessoas (Bem-Estar & Check-ins)</div>
+                <ul>
+                    <li>Check-in rápido de bem-estar (3 perguntas + texto opcional)</li>
+                    <li>Detecção de risco de estresse por modelo de ML</li>
+                    <li>Histórico pessoal do colaborador (privado)</li>
+                    <li>Painel de calor da equipe (somente gestão/RH)</li>
+                    <li>Alertas automáticos quando o bem-estar cair abaixo de um limiar</li>
+                    <li>Recomendações leves (pausas, microlições, reorganização de tarefas)</li>
+                </ul>
+            </div>
+            <div class="feature-card">
+                <div class="feature-title">⚙️ 2) Módulo de Operações (Produtividade & Rotinas)</div>
+                <ul>
+                    <li>Agente IA que tira dúvidas (fórmulas de Excel, fluxo, políticas internas)</li>
+                    <li>Automação de tarefas repetitivas (gerar relatórios, checklists, avisos)</li>
+                    <li>Integração com tarefas/fluxos (CSV / simulado / Monday API)</li>
+                    <li>Painel de produtividade geral (tarefas, carga, gargalos)</li>
+                </ul>
+            </div>
+            <div class="feature-card">
+                <div class="feature-title">🔌 3) Módulo de Energia & Recursos (Sustentabilidade)</div>
+                <ul>
+                    <li>Coleta de energia via ESP32 ou simulação</li>
+                    <li>Detecção de consumo anormal (ML: anomalias)</li>
+                    <li>Monitoramento de equipamentos (ligado/desligado)</li>
+                    <li>Alertas de desperdício (fora do horário, picos)</li>
+                    <li>Sugestões de economia (reduzir carga, ajustar ar/luz)</li>
+                </ul>
+            </div>
+            <div class="feature-card">
+                <div class="feature-title">📦 4) Estoque & Materiais (Eficiência Operacional)</div>
+                <ul>
+                    <li>Monitor de estoque parado (dias sem giro)</li>
+                    <li>Classificação inteligente de itens com baixa rotatividade</li>
+                    <li>Sinalização de possível descarte ou reuso</li>
+                    <li>Dashboard com indicadores de ociosidade</li>
+                </ul>
+            </div>
+            <div class="feature-card">
+                <div class="feature-title">🤖 5) Bot Copiloto (Teams/Slack)</div>
+                <ul>
+                    <li>/checkin — registrar bem-estar</li>
+                    <li>/energia hoje — estimativa e anomalias</li>
+                    <li>/estoque parado — itens críticos</li>
+                    <li>/relatorio semanal — gera PDF/markdown automático</li>
+                    <li>/microlicao — mini treinamentos gamificados</li>
+                    <li>/ajuda — dúvidas operacionais/resolução de tarefas</li>
+                </ul>
+            </div>
+            <div class="feature-card">
+                <div class="feature-title">🧠 6) Inteligência Artificial (MVP)</div>
+                <ul>
+                    <li>Modelo de estresse (RandomForestRegressor)</li>
+                    <li>Detecção de anomalias de energia (Isolation Forest/Autoencoder)</li>
+                    <li>Classificador de intenção do bot (ML básico)</li>
+                    <li>NLU Emocional (Deep Learning com RNN)</li>
+                    <li>Sistema de recomendações simples (regras + IA)</li>
+                </ul>
+            </div>
+            <div class="feature-card">
+                <div class="feature-title">📊 7) Dashboard Streamlit (App Principal)</div>
+                <ul>
+                    <li>Aba Pessoas — bem-estar, calor, alertas</li>
+                    <li>Aba Operações — produtividade, cargas, tarefas</li>
+                    <li>Aba Sustentável — energia, estoque, CO₂ estimado</li>
+                    <li>Aba Aprender & Incluir — microlições, fairness, badges</li>
+                    <li>Painel de explicabilidade (SHAP)</li>
+                    <li>Gráficos atualizados em tempo real</li>
+                </ul>
+            </div>
+            <div class="feature-card">
+                <div class="feature-title">🎮 8) Gamificação (Simples e Não Invasiva)</div>
+                <ul>
+                    <li>Pontos por check-in e microlições</li>
+                    <li>Pontos por ações sustentáveis</li>
+                    <li>Badges (“Guardião de Energia”, etc.)</li>
+                    <li>Leaderboard por times (não individual)</li>
+                </ul>
+            </div>
+            <div class="feature-card">
+                <div class="feature-title">📑 9) Relatórios Automatizados</div>
+                <ul>
+                    <li>PDF semanal com insights (gerado por R ou Python)</li>
+                    <li>Alertas críticos automáticos</li>
+                    <li>Tendências de longo prazo</li>
+                    <li>Fairness básico no recrutamento (disciplinas da FIAP)</li>
+                </ul>
+            </div>
+            <div class="feature-card">
+                <div class="feature-title">🔐 10) Segurança e Privacidade (Cybersecurity)</div>
+                <ul>
+                    <li>RBAC completo (colaborador vs RH/gestor)</li>
+                    <li>Criptografia em repouso e trânsito</li>
+                    <li>Logs de auditoria e Privacidade por design</li>
+                    <li>Dados sensíveis separados</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- C1: Diagrama de Contexto -->
+        <div id="context" class="diagram-section">
+            <h2 class="diagram-title"><span class="icon">🌍</span>C1 - Contexto do Sistema</h2>
+            <div class="diagram-description">Visão de alto nível mostrando como o seu sistema interage com usuários e outros sistemas externos.</div>
+            <div class="mermaid">
+                C4Context
+                    title Diagrama de Contexto para o HUM.A.N Ops
+                    
+                    Person(colaborador, "Colaborador", "Realiza check-ins de bem-estar e consultas via bot/dashboard.")
+                    Person(gestor, "Gestor / RH", "Analisa painéis de bem-estar, produtividade e sustentabilidade.")
+                    Person(operacoes, "Time de Operações", "Monitora estoque, energia e eficiência operacional.")
+                    Person(admin, "Administrador", "Gerencia o sistema, usuários e configurações.")
+
+                    System_Ext(teams, "MS Teams / Slack", "Plataforma de comunicação onde o Bot Copiloto opera.")
+                    System_Ext(iot, "Sensores IoT (ESP32)", "Coletam dados de energia, temperatura e iluminação.")
+                    System_Ext(monday, "Monday.com API (Simulado)", "Fonte de dados para tarefas e produtividade.")
+
+                    System(humanOps, "HUM.A.N Ops", "Plataforma Integrada de Bem-Estar, Operações e Sustentabilidade.")
+
+                    Rel(colaborador, humanOps, "Usa para check-ins, microlições e consultas")
+                    Rel(gestor, humanOps, "Usa para visualizar dashboards e relatórios")
+                    Rel(operacoes, humanOps, "Usa para monitorar indicadores operacionais")
+                    Rel(admin, humanOps, "Configura e mantém o sistema")
+
+                    Rel(humanOps, teams, "Envia e recebe mensagens via Bot Copiloto")
+                    Rel(iot, humanOps, "Envia dados de sensores via MQTT")
+                    Rel(humanOps, monday, "Busca dados de tarefas e fluxos")
+            </div>
+        </div>
+
+        <!-- C2: Diagrama de Contêineres -->
+        <div id="containers" class="diagram-section">
+            <h2 class="diagram-title"><span class="icon">📦</span>C2 - Arquitetura de Contêineres</h2>
+            <div class="diagram-description">Mostra os principais blocos de construção (contêineres) do seu sistema, como aplicações web, APIs, bancos de dados, etc.</div>
+            <div class="mermaid">
+                C4Container
+                    title Diagrama de Contêineres para o HUM.A.N Ops
+
+                    Person(colaborador, "Colaborador")
+                    Person(gestor, "Gestor / RH")
+                    Person(operacoes, "Time de Operações")
+                    
+                    System_Ext(teams, "MS Teams / Slack")
+                    System_Ext(iot, "Sensores IoT (ESP32)")
+                    System_Ext(monday, "Monday.com API")
+
+                    System_Boundary(c1, "HUM.A.N Ops") {
+                        Container(dashboard, "Dashboard Web", "Plotly", "Interface principal para visualização de dados e dashboards.")
+                        Container(bot, "Bot Copiloto", "Python + SDK Teams/Slack", "Processa comandos e interações nas plataformas de chat.")
+                        Container(api, "HumanOps API", "Python (FastAPI)", "Endpoint central que orquestra a lógica de negócio, dados e IA.")
+                        Container(ml_service, "ML Service", "Python (Scikit-learn, TF)", "Serve os modelos de ML para predições de estresse e anomalias.")
+                        ContainerDb(db, "Banco de Dados", "PostgreSQL", "Armazena todos os dados da aplicação: usuários, check-ins, energia, etc.")
+                        Container(iot_gateway, "IoT Gateway", "Python (paho-mqtt)", "Recebe dados dos sensores via MQTT e os envia para a API.")
+                        Container(report_engine, "Motor de Relatórios", "R (RMarkdown)", "Gera relatórios estatísticos complexos em PDF/HTML.")
+                    }
+
+                    Rel(colaborador, dashboard, "Acessa histórico pessoal")
+                    Rel(colaborador, bot, "Realiza check-ins e consultas")
+                    Rel(gestor, dashboard, "Visualiza painéis de gestão")
+                    Rel(operacoes, dashboard, "Monitora indicadores operacionais")
+
+                    Rel(dashboard, api, "Busca dados para os gráficos", "HTTPS/JSON")
+                    Rel(bot, api, "Envia comandos e recebe respostas", "HTTPS/JSON")
+                    
+                    Rel(api, ml_service, "Solicita predições", "HTTPS/JSON")
+                    Rel(api, db, "Lê e escreve dados", "JDBC")
+                    Rel(api, report_engine, "Aciona a geração de relatórios")
+                    Rel(api, monday, "Busca dados de tarefas")
+
+                    Rel_U(bot, teams, "Interage com a API de chat")
+                    Rel(iot, iot_gateway, "Publica dados de sensores", "MQTT")
+                    Rel(iot_gateway, api, "Encaminha dados de sensores", "HTTPS/JSON")
+            </div>
+        </div>
+
+        <!-- C3: Diagrama de Componentes -->
+        <div id="components" class="diagram-section">
+            <h2 class="diagram-title"><span class="icon">⚙️</span>C3 - Componentes da HumanOps API</h2>
+            <div class="diagram-description">Visão detalhada dos componentes internos do contêiner "HumanOps API", mostrando como a lógica de negócio é organizada.</div>
+            <div class="mermaid">
+C4Component
+    title Diagrama de Componentes para a HumanOps API
+
+    Container(dashboard, "Dashboard Web", "Plotly")
+    Container(bot, "Bot Copiloto", "Python")
+    ContainerDb(db, "Banco de Dados", "PostgreSQL")
+    Container(ml_service, "ML Service", "Python")
+    Container(iot_gateway, "IoT Gateway", "Python")
+
+    System_Boundary(c1, "HumanOps API (FastAPI)") {
+        Component(auth, "Módulo de Segurança", "FastAPI Security", "Gerencia autenticação (OAuth2) e autorização (RBAC).")
+        Component(checkin, "Módulo de Check-in", "Python", "Processa e armazena check-ins de bem-estar.")
+        Component(energia, "Módulo de Energia", "Python", "Processa e armazena dados de consumo de energia.")
+        Component(estoque, "Módulo de Estoque", "Python", "Processa e armazena dados de giro de estoque.")
+        Component(gamificacao, "Módulo de Gamificação", "Python", "Calcula pontos e badges para os usuários.")
+        Component(recomendacao, "Módulo de Recomendação", "Python", "Gera sugestões leves com base nos dados do usuário.")
+        Component(ml_predictions, "Módulo de Predições ML", "Python", "Interface para solicitar predições ao ML Service.")
+        Component(auditoria, "Módulo de Auditoria", "Python", "Registra logs de todas as operações críticas.")
+    }
+
+    Rel(dashboard, auth, "Autentica usuário")
+    Rel(bot, auth, "Autentica usuário")
+
+    Rel(dashboard, checkin, "Busca histórico de bem-estar")
+    Rel(bot, checkin, "Registra novo check-in")
+    Rel(checkin, db, "Lê/Escreve na tabela 'checkins'")
+    Rel(checkin, ml_predictions, "Solicita predição de estresse")
+    Rel(checkin, recomendacao, "Solicita recomendação")
+    Rel(checkin, gamificacao, "Adiciona pontos por check-in")
+
+    Rel(iot_gateway, energia, "Envia dados de sensores")
+    Rel(energia, db, "Lê/Escreve na tabela 'energia'")
+    Rel(energia, ml_predictions, "Solicita detecção de anomalia")
+
+    Rel(dashboard, estoque, "Busca dados de ociosidade")
+    Rel(estoque, db, "Lê/Escreve na tabela 'estoque'")
+
+    Rel(ml_predictions, ml_service, "Chama o endpoint de predição", "HTTPS")
+
+    Rel(auth, auditoria, "Registra tentativas de login")
+    Rel(checkin, auditoria, "Registra acesso a dados sensíveis")
+
+    UpdateElementStyle(auth, $bgColor="F2665C", $fontColor="white", $borderColor="C84B3F")
+    UpdateElementStyle(checkin, $bgColor="7CBB00", $fontColor="white", $borderColor="6B9F00")
+    UpdateElementStyle(energia, $bgColor="7CBB00", $fontColor="white", $borderColor="6B9F00")
+    UpdateElementStyle(estoque, $bgColor="7CBB00", $fontColor="white", $borderColor="6B9F00")
+    UpdateElementStyle(gamificacao, $bgColor="7CBB00", $fontColor="white", $borderColor="6B9F00")
+    UpdateElementStyle(recomendacao, $bgColor="7CBB00", $fontColor="white", $borderColor="6B9F00")
+    UpdateElementStyle(ml_predictions, $bgColor="00A9E0", $fontColor="white", $borderColor="008CB8")
+    UpdateElementStyle(auditoria, $bgColor="F2665C", $fontColor="white", $borderColor="C84B3F")
+            </div>
+        </div>
+
+        <!-- C3: Diagrama de Componentes - Serviço de ML -->
+        <div id="components-ml" class="diagram-section">
+            <h2 class="diagram-title"><span class="icon">🧠</span>C3 - Componentes do Serviço de ML</h2>
+            <div class="diagram-description">Detalha os componentes internos do contêiner de Machine Learning, responsável por servir os modelos preditivos.</div>
+            <div class="mermaid">
+C4Component
+    title Diagrama de Componentes para o Serviço de ML
+
+    Container(api, "HumanOps API", "FastAPI")
+
+    System_Boundary(c1, "ML Service") {
+        Component(api_controller, "API Controller", "FastAPI", "Recebe requisições de predição e as roteia.")
+        Component(stress_model, "Stress Model", "RandomForestRegressor", "Modelo treinado para prever risco de estresse.")
+        Component(anomaly_model, "Energy Anomaly Detector", "Isolation Forest/Autoencoder", "Modelo treinado para detectar anomalias de consumo.")
+        Component(intent_model, "Intent Classifier", "Scikit-learn", "Classifica a intenção do usuário nos comandos do bot.")
+        Component(nlu_model, "NLU Emocional", "Deep Learning (RNN + Tokenizer)", "Analisa o sentimento e emoções em textos de check-in.")
+        Component(shap_engine, "Explainability Engine", "SHAP", "Gera explicações (SHAP values) para as predições dos modelos.")
+    }
+
+    Rel(api, api_controller, "Solicita predição", "HTTPS/JSON")
+    Rel(api_controller, stress_model, "Usa")
+    Rel(api_controller, anomaly_model, "Usa")
+    Rel(api_controller, intent_model, "Usa")
+    Rel(api_controller, nlu_model, "Usa para analisar textos")
+    Rel(api_controller, shap_engine, "Usa para gerar explicações")
+
+    Rel(shap_engine, stress_model, "Analisa")
+    Rel(shap_engine, anomaly_model, "Analisa")
+
+    UpdateElementStyle(api_controller, $bgColor="00A9E0", $fontColor="white")
+    UpdateElementStyle(stress_model, $bgColor="7CBB00", $fontColor="white")
+    UpdateElementStyle(anomaly_model, $bgColor="7CBB00", $fontColor="white")
+    UpdateElementStyle(intent_model, $bgColor="7CBB00", $fontColor="white")
+    UpdateElementStyle(nlu_model, $bgColor="7CBB00", $fontColor="white")
+    UpdateElementStyle(shap_engine, $bgColor="F2665C", $fontColor="white")
+            </div>
+        </div>
+
+        <!-- C4: Diagrama de Código (Exemplo: NLU Emocional) -->
+        <div id="code-nlu" class="diagram-section">
+            <h2 class="diagram-title"><span class="icon">📄</span>C4 - Diagrama de Código (Exemplo: NLU Emocional)</h2>
+            <div class="diagram-description">Visão detalhada das classes internas do componente "NLU Emocional" dentro do ML Service, ilustrando sua estrutura de código.</div>
+            <div class="mermaid">
+classDiagram
+    direction LR
+
+    class NLUManager {
+        + analyze_text(text: string): EmotionResult
+        - _tokenizer: Tokenizer
+        - _rnn_model: RNNModel
+        - _emotion_classifier: EmotionClassifier
+    }
+
+    class Tokenizer {
+        + tokenize(text: string): list~string~
+        + encode(tokens: list~string~): list~int~
+        + load_vocab(path: string)
+    }
+
+    class RNNModel {
+        + load_model(path: string)
+        + predict(encoded_input: list~int~): array~float~
+        + train(data: DataSet, labels: DataSet)
+    }
+
+    class EmotionClassifier {
+        + classify(prediction_output: array~float~): EmotionResult
+    }
+
+    class EmotionResult {
+        + sentiment: string
+        + confidence: float
+        + emotions: map~string, float~
+    }
+
+    NLUManager "1" --> "1" Tokenizer : uses
+    NLUManager "1" --> "1" RNNModel : uses
+    NLUManager "1" --> "1" EmotionClassifier : uses
+    EmotionClassifier "1" --> "1" EmotionResult : creates
+            </div>
+        </div>
+
+        <!-- Diagrama de Implantação -->
+        <div id="deployment" class="diagram-section">
+            <h2 class="diagram-title"><span class="icon">☁️</span>Diagrama de Implantação (Exemplo)</h2>
+            <div class="diagram-description">Mostra como os contêineres do sistema são implantados em uma infraestrutura de nuvem (ex: Google Cloud).</div>
+            <div class="mermaid">
+C4Deployment
+    title Diagrama de Implantação do HUM.A.N Ops no Google Cloud
+
+    Deployment_Node(gcp, "Google Cloud Platform") {
+        Deployment_Node(cloud_run, "Cloud Run") {
+            Container(dashboard, "Dashboard Web", "Plotly")
+            Container(api, "HumanOps API", "FastAPI")
+            Container(bot, "Bot Copiloto", "Python")
+            Container(ml_service, "ML Service", "Python")
+            Container(iot_gateway, "IoT Gateway", "Python")
+            Container(report_engine, "Motor de Relatórios", "R")
+        }
+        Deployment_Node(cloud_sql, "Cloud SQL") {
+            ContainerDb(db, "Banco de Dados", "PostgreSQL")
+        }
+        Deployment_Node(iot_core, "Cloud IoT Core") {
+            System_Ext(mqtt, "MQTT Broker")
+        }
+    }
+
+    Deployment_Node(user_device, "Dispositivo do Usuário") {
+        System_Ext(browser, "Web Browser")
+        System_Ext(teams, "MS Teams / Slack")
+    }
+
+    Deployment_Node(corp_env, "Ambiente Corporativo") {
+        System_Ext(iot, "Sensores IoT (ESP32)")
+    }
+
+    Rel(browser, dashboard, "Acessa via HTTPS")
+    Rel(teams, bot, "Interage via API do Chat")
+    Rel(iot, mqtt, "Publica dados via MQTT")
+            </div>
+        </div>
+    </div>
+
+    <script>
+        mermaid.initialize({
+            startOnLoad: true,
+            theme: 'default',
+            themeVariables: {
+                primaryColor: '#EDE7F6',
+                primaryTextColor: '#2c3e50',
+                primaryBorderColor: '#B39DDB',
+                lineColor: '#7E57C2',
+                secondaryColor: '#f5f5f5',
+                tertiaryColor: '#fff3e0'
+            }
+        });
+    </script>
+</body>
+</html>
